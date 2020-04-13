@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<!--<view class="begininfo">
+  <view class='ep'></view>
+  <button bindtap='beginAnswer'> 开始测试 </button>
+</view>-->
+<view class='view-page'>
+<navbar page-name="作业" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view >
+  <view class='list'>
+    <text> 第一单元测试</text>
+  </view>
+     <view class='listone'>
+      <text> 测试科目：计算机通信与网络</text>
+  </view>
+  <view class='listtwo'>
+       <text> 测试时长：10分钟</text>
+  </view>
+ <view class='listthree'>
+       <text> 提示: 本次测试共有10道题</text>
+  </view>
+<view class='bbuton'>
+  <button  class='buton' bindtap='beginAnswer'> 开始答题</button>
+</view>
+</view>
+
+
+</view>
+</view>

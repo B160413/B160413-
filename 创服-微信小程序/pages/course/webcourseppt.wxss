@@ -1,0 +1,101 @@
+/* pages/course/webcourse.wxss */
+page {
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  /*overflow: hidden;*/
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+.center{
+  padding-top: 5rpx;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-tab-item{
+  width: 90%; 
+  color:rgb(0, 118, 187);
+  border-bottom: 4rpx solid rgb(139, 209, 250);
+  text-align: center;
+  margin-left:5%;
+  margin-top:10rpx;
+}
+
+swiper{
+  text-align: center;
+  height: 1000px;
+}
+.square-col{
+  /*border: 1px solid #858585;
+  border-radius: 5px;*/
+  
+  border-bottom: 1rpx solid #d6d6d6;
+  border-bottom-width: 100%;
+}
+.little-font
+{
+  font-size:15px;
+  margin-left:5px;
+}
+.hr{
+  height: 1rpx;
+  width: 100%;
+  background-color: #d6d6d6;
+  /*margin-left:3%;
+  opacity: 0.5;*/
+}
+.timeinfo{
+  color: #000000;
+  /*background-color: #d1d1d1;*/
+  line-height:40px;
+  height:25px;
+  margin-left:80%;
+  margin-top:5px;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-weight: bold;
+  font-size:25rpx;
+}
+.doc-tittle{
+  font-size:30rpx;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  width: 60%;
+  margin-left:2%;
+
+}
+.left{
+  width: 90%;
+  height: 100rpx;
+  line-height: 80rpx;
+  font-size:20rpx;
+  display: flex;
+  flex-direction: col;
+  margin-left:5%;
+}
+.single {
+  overflow : hidden;    
+  text-overflow: ellipsis;   
+  display: -webkit-box;    
+  -webkit-line-clamp: 1;   
+  -webkit-box-orient: vertical;    
+  word-break: break-all; /* 追加这一行代码 */
+}

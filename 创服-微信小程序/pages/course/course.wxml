@@ -1,0 +1,41 @@
+<!--pages/course/course.wxml--style='height:calc(100vh - {{navH}}px)'-->
+<view class='view-page'>
+<navbar homehiden="1" page-name="课程" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px);'> 
+
+
+<view class="content">
+    <swiper autoplay="true" indicator-dots="{{indicatorDots}}" interval='3000' duration='1000' indicatorDots="true" indicator-color="rgb(219, 208, 208)" indicator-active-color="rgb(255,255,255)" style='height:200px'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+
+<view class='bg' ><!--卡片部分，整体背景为白色-->
+  <block wx:for="{{course_list}}" wx:for-index="index">
+  <!--课程图片-->
+  <view class='center'><!--居中效果-->
+    <view class='pic' bindtap="toast">
+      <image src="{{item.images}}" style='width:90%;height:170px;margin-left:5%;border-radius: 0px;border-top-right-radius: 10px;border-top-left-radius: 10px;box-shadow: 3px -3px 3px 3px #e4d7c6;'></image><!--style部分包括图片大小、圆角、阴影-->
+    </view>
+    <view class='item' >
+      <view class='row'><!--课程信息-->
+        <!--<text>{{item.name}}</text>-->
+        <!--作业情况-->
+        <!--<image src='/pages/image/zuoye.png' style='width:21px;height:20px;text-align: right'></image>-->
+        <view class='col'><!--教师信息-->
+          <image src='/pages/image/man.png' style='width:21px;height:20px;margin-top:5%;'></image>
+          <text>{{item.teacher}}</text>
+        </view>
+        <image src='{{work_images[item.finish]}}' style='width:21px;height:20px;text-align: right'></image>
+      </view>
+    </view>
+  </view>
+  <view class='hr'></view>
+  </block>
+</view>
+</view>
+</view>

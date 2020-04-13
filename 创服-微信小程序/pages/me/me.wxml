@@ -1,0 +1,72 @@
+
+<!--<view class='user'>
+  <view class='left'>
+    <view class='name'>冯雅平</view>
+    <view><button class='bbuton' bindtap='jumppage'>编辑资料</button> </view>
+  </view>
+  <view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>-->
+
+<view class='view-page'>
+<navbar homehiden="1" page-name="我的" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view class='user'>
+  <view class='left'>
+    <view class='name'>冯雅平</view>
+    <view class='xh'>B16111701</view>  
+  </view>
+  <view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+<!--<view><button class='bbuton' bindtap='jumppage'>编辑资料</button> </view>-->
+
+
+<view class="list">
+<i-cell-group>
+    <i-cell  is-link="true" url="/pages/me/personal">
+    <view class="fsize"><i-icon type="businesscard" size="35" color="#5cadff"/> 编辑资料</view>
+    </i-cell>
+    <i-cell>
+    </i-cell>
+</i-cell-group>
+<i-cell-group>
+<i-cell is-link="true" url="/pages/me/collections" >
+    <view class="fsize"><i-icon type="document" size="35" color="#5cadff"/> 我的成绩</view>
+    </i-cell>
+    <i-cell is-link="true" url="/pages/me/collections">
+    <view class="fsize"><i-icon type="collection" size="35" color="#5cadff"/> 我的收藏</view>
+    </i-cell>
+     <i-cell is-link="true" url="/pages/me/collections">
+    <view class="fsize"><i-icon type="emoji" size="35" color="#5cadff"/> 我的下载</view>
+    </i-cell>
+    <i-cell>
+    </i-cell>
+</i-cell-group>
+<i-cell-group>
+<i-cell is-link="true" url="/pages/me/collections">
+    <view class="fsize"><i-icon type="mine" size="35" color="#5cadff"/> 身份绑定</view>
+    </i-cell>
+    <i-cell is-link="true" url="/pages/me/collections">
+    <view class="fsize"><i-icon type="mobilephone" size="35" color="#5cadff"/> 绑定手机</view>
+    </i-cell>
+    <i-cell>
+    </i-cell>
+</i-cell-group>
+<i-cell-group>
+    <i-cell  is-link="true" url="/pages/me/personal">
+    <view class="fsize"><i-icon type="message" size="35" color="#5cadff"/> 反馈</view>
+    </i-cell>
+    <i-cell>
+    </i-cell>
+</i-cell-group>
+</view>
+<!--<view class='bbuton'>
+  <button  class='buton' bindtap='jumppage'> 退出登录</button>
+</view>-->
+</view>
+</view>

@@ -1,0 +1,158 @@
+<!--pages/course/webcourse_all.wxml
+<text>pages/course/webcourse_all.wxml</text>
+<view class='center'>
+  <image src="/pages/image/c1.png" style='width:351px;height:170px;border-radius: 0px;border-top-right-radius: 10px;border-top-left-radius: 10px;box-shadow: 5px -5px 5px 5px #dfd8c6;'></image>
+</view>-->
+<view class='view-page'>
+<navbar page-name="课程详情" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<!--<view class='center'>
+  <text>课程详情</text>
+</view>-->
+<view class='row' style='margin-top:30rpx;'>
+  <image src='/pages/image/CouInfo.png' style='width:25px;height:25px;margin-left:5%;margin-top:22rpx;'></image>
+  <text class='little-tittle'>课程信息</text>
+</view>
+<view class='hr'></view>
+<!--教师信息 -->
+<view class="li" data-index="0" bindtap='changeToggle' style='margin-top:20rpx;'>
+  <view class='row' style='margin-left:8%;'>
+    <image src='/pages/image/man.png' style='width:21px;height:20px;margin-top:14%;'></image>
+    <view style='margin-left:20rpx'>教师信息</view>
+  </view>
+  <!--上下箭头的显示与隐藏-->
+  <view hidden="{{selectedFlag[0]}}">
+    <image src='/pages/image/arr2.png' style='width:21px;height:20px;'></image>
+  </view>
+  <view hidden="{{!selectedFlag[0]}}">
+    <image src='/pages/image/arr1.png' style='width:21px;height:20px;'></image>
+  </view>
+  </view>
+<!--被折叠菜单-->
+<view hidden="{{!selectedFlag[0]}}">
+  <block wx:for="{{teacher}}" wx:for-item="item" wx:for-index="index">
+    <view class="li little-bg-gray">
+      <view>{{item.item_infor}}</view>
+    </view>
+  </block>
+</view>
+
+<!--上课时间-->
+<view class="li" data-index="1" bindtap='changeToggle'>
+  <view class='row' style='margin-left:8%;'>
+    <image src='/pages/image/list.png' style='width:17px;height:16px;margin-top:15%;'></image>
+    <view style='margin-left:20rpx'>上课时间</view>
+  </view>
+  <!--上下箭头的显示与隐藏-->
+  <view hidden="{{selectedFlag[1]}}">
+    <image src='/pages/image/arr2.png' style='width:21px;height:20px;'></image>
+  </view>
+  <view hidden="{{!selectedFlag[1]}}">
+    <image src='/pages/image/arr1.png' style='width:21px;height:20px;'></image>
+  </view>
+</view>
+<!--被折叠内容-->
+<view hidden="{{!selectedFlag[1]}}">
+  <block wx:for="{{time}}" wx:for-item="item" wx:for-index="index">
+    <view class="li little-bg-gray">
+      <view>{{item.timeinfor}}</view>
+    </view>
+  </block>
+</view>
+
+<!--学分信息-->
+<view class="li" data-index="2" bindtap='changeToggle'>
+  <view class='row' style='margin-left:8%;'>
+    <image src='/pages/image/xuefenshu.png' style='width:20px;height:19px;margin-top:15%;'></image>
+    <view style='margin-left:20rpx'>学分信息</view>
+  </view>
+  <!--上下箭头的显示与隐藏-->
+  <view hidden="{{selectedFlag[2]}}">
+    <image src='/pages/image/arr2.png' style='width:21px;height:20px;'></image>
+  </view>
+  <view hidden="{{!selectedFlag[2]}}">
+    <image src='/pages/image/arr1.png' style='width:21px;height:20px;'></image>
+  </view>
+</view>
+<!--被折叠内容-->
+<view hidden="{{!selectedFlag[2]}}">
+  <block wx:for="{{score}}" wx:for-item="item" wx:for-index="index">
+    <view class="li little-bg-gray">
+      <view>{{item.scoreinfor}}</view>
+    </view>
+  </block>
+</view>
+
+<view class='hr2' style='margin-top:70rpx;'></view>
+<view class='row' style='margin-top:30rpx;'>
+  <image src='/pages/image/CouRes.png' style='width:25px;height:25px;margin-left:5%;margin-top:22rpx;'></image>
+  <text class='little-tittle' >课程资源</text>
+</view>
+<view class='hr'></view>
+<view class='row-center' style='margin-top:15px;'>
+    <view class='col'>
+      <image data-tar='ppt' src='/pages/image/ppt1.png' style='width:30px;height:31px;'  bindtap='onPostTap'></image>
+      <!--<text>课件PPT</text>-->
+    </view>
+    <view class='col'>
+      <image data-tar='word' src='/pages/image/word.png' style='width:35px;height:31px;' bindtap='onPostTap'></image>
+      <!--<text>课件文档</text>-->
+    </view>
+    <view class='col'>
+      <image data-tar='video' src='/pages/image/video1.png' style='width:31px;height:30px;' bindtap='onPostTap'></image>
+      <!--<text>教学视频</text>-->
+    </view>
+</view>
+<view class='row-center '>
+    <view class='col'>
+      <!--<image src='/pages/image/ppt.png' style='width:40px;height:39px;'></image>-->
+      <text class='icon-tittle' data-tar='ppt' bindtap='onPostTap'>课件PPT</text>
+    </view>
+    <view class='col'>
+      <!--<image src='/pages/image/word.png' style='width:40px;height:39px;'></image>-->
+      <text class='icon-tittle' data-tar='word' bindtap='onPostTap'>课件文档</text>
+    </view>
+    <view class='col'>
+      <!--<image src='/pages/image/video.png' style='width:40px;height:39px;'></image>-->
+      <text class='icon-tittle' data-tar='video' bindtap='onPostTap'>教学视频</text>
+    </view>
+    
+</view>
+
+<view class='hr2' style='margin-top:70rpx;'></view>
+<view class='row' style='margin-top:30rpx;'>
+  <image src='/pages/image/CouWork.png' style='width:25px;height:25px;margin-left:5%;margin-top:22rpx;'></image>
+  <text class='little-tittle' >作业习题</text>
+</view>
+<view class='hr'></view>
+<view class='row-center' style='margin-top:15px;'>
+    <view class='col'>
+      <image data-tar='test' src='/pages/image/wenjuandiaocha.png' style='width:30px;height:31px;'  bindtap='WorkOnPostTap'></image>
+      <!--<text>课件PPT</text>-->
+    </view>
+    <view class='col'>
+      <image data-tar='word' src='/pages/image/word.png' style='width:35px;height:35px;'></image>
+      <!--<text>课件文档</text>-->
+    </view>
+</view>
+<view class='row-center '>
+    <view class='col'>
+      <!--<image src='/pages/image/ppt.png' style='width:40px;height:39px;'></image>-->
+      <text class='icon-tittle' data-tar='test' bindtap='WorkOnPostTap'>选择题</text>
+    </view>
+    <view class='col'>
+      <!--<image src='/pages/image/word.png' style='width:40px;height:39px;'></image>-->
+      <text class='icon-tittle' data-tar='word'>主观题</text>
+    </view>
+</view>
+<!--作业
+<view class="li" data-index="4" bindtap='onPostTap'>
+  <view class='row'>
+    <image src='/pages/image/zuoye.png' style='width:16px;height:18px;margin-top:22%;'></image>
+    <view style='margin-left:20rpx'>作业</view>
+  </view>
+</view>-->
+</view>
+</view>

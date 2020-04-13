@@ -1,0 +1,140 @@
+/* pages/result/result.wxss */
+page {
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  /*overflow: hidden;*/
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+
+.break{
+  /*width: 80%;*/
+  word-wrap:break-word;
+  overflow : hidden;    
+  text-overflow: ellipsis;   
+  display: -webkit-box;    
+  -webkit-line-clamp: 2;   
+  -webkit-box-orient: vertical;    
+  word-break: break-all; /* 追加这一行代码 */
+}
+.result_title{
+  margin-left: 10rpx;
+}
+.result{
+  margin: 50px auto;
+  text-align: center;
+}
+
+.mybutton {
+  width: 40%;
+  height: 60rpx;
+  margin-left: 30% ;
+}
+/*button{
+  float: left; 
+}*/
+.li {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  font-size: 30rpx;
+  /*width: 90%;*/
+  padding: 0 4%;
+  height: 600rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #dfdfdf;
+}
+.row
+{
+  display: flex;
+  flex-direction: row;
+  
+}
+.row1{
+  height: 90rpx;
+}
+.pic{
+   margin-top: 5%;
+}
+.square{
+  width: 100rpx;
+ /* margin-left:10%;*/
+  height: 60rpx;
+  border: 1px solid #89ccf3;
+  border-radius: 8rpx;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #449acc;
+  margin-top:20rpx;
+  position: relative
+}
+/**index.wxss**/
+
+
+.list{
+  background-color: #f4f7f6;
+  margin-top: 80rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listone{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 80rpx;
+}
+.listtwo{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 7px;
+  justify-content: center;
+  align-items: center;
+}
+.listthree{
+ margin-top: 12px;
+  display: flex;
+  font-size: 40rpx;
+  
+}
+.buton{
+  color:black;
+  width: 50%;
+  background-color:  #d1f1f5;
+  
+}
+.bbuton{
+  margin-top: 60rpx;
+}

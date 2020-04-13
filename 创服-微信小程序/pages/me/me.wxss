@@ -1,0 +1,88 @@
+/* pages/index/my.wxss */
+page {
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  /*overflow: hidden;*/
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+.card {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #a8e1e9;
+  box-shadow: 4px 1px 1px #cccccc;
+  margin: 8px;
+  position: relative;
+}
+.word{
+  text-align: center;
+  font-size: 20px;
+}
+.buton{
+  color:black;
+  width: 80%;
+  background-color:  #a8e1e9;
+  
+}
+.fsize{
+  font-size: 35rpx;
+}
+
+.user{
+height: 144px;
+display:flex;
+margin-top: 20px;
+margin-left: 20px;
+}
+.userinfo-avatar {
+overflow:hidden;
+display: block;
+width: 160rpx;
+height: 160rpx;
+margin: 20rpx;
+margin-top: 50rpx;
+margin-left: 130px;
+border-radius: 50%;
+border: 2px solid #fff;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.left{
+  display: block;
+  width: 150px;
+  margin-top: 50rpx;
+}
+.name{
+  font-weight: 700;
+  margin-top: 12rpx;
+  margin-left: 20px;
+  font-size: 50rpx;
+}
+.xh{
+  font-weight: 500;
+  margin-top: 17rpx;
+  font-size: 35rpx;
+  margin-left: 20px;
+  color:rgb(82, 80, 80);
+}
+.bbuton{
+  margin-top: 60rpx;
+}

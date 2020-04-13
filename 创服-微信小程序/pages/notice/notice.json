@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-card": "../../dist/card/index",
+    "i-icon": "../../dist/icon/index",
+    "navbar": "/dist/navbar/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "通知",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,102 @@
+
+<!--pages/result/result.wxml
+<wxs module="filters" src="/pages/course/work/result/filter.wxs "></wxs>-->
+<!--<view>
+    <view class='result_title'>
+      <view><text>恭喜您答题结束</text></view>
+  </view>
+
+  <view class='result'>
+    <view><text>本次测试总共{{questionCount}}道题</text></view>
+    <view><text>答对{{right}}道题</text></view>
+    <view><text>答错{{wrong}}道题</text></view>
+    <view><text>正确率为{{accuracy}}%</text></view>
+    <view><text>本次测试得{{grade}}分</text></view>
+  </view>
+  
+  <view class='mybutton'>
+     <button bindtap='wrongAnswer' class='blbutton'>查看错题</button>
+     <button bindtap='reset' class='brbutton'>返回首页</button>
+  </view>
+</view>-->
+
+<view class='view-page'>
+<navbar page-name="作业结果" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view>
+  <view class='list'>
+    <text>本次测试中，您已超过12人</text>
+  </view>
+  <view class='listone'>
+    <text>本次测试总分值：{{questionCount}}分
+           本次测试得分：{{grade}}分</text>
+  </view>
+  <!--<view class='mybutton'>
+    <button bindtap='reset' class='brbutton'>返回首页</button>
+  </view>-->
+  <view class='listthree'>
+    <text> 答题详情：</text>
+  </view>
+
+ <!-- <view>
+    <i-cell-group >
+        <i-cell is-link url="/pages/index/index">第一题</i-cell>
+        <i-cell is-link url="/pages/index/index">第二题</i-cell>
+        <i-cell is-link url="/pages/index/index">第三题</i-cell>
+      </i-cell-group>
+  </view>
+       
+      
+  
+<view class='bbuton'>
+  <button bindtap='wrongAnswer' class='button'>查看错题</button>
+</view>
+<view class='bbuton'>
+   <button bindtap='reset' class='button'>返回首页</button>
+</view>-->
+</view>
+
+
+
+<!--<view wx:if="{{questionCount!=0}}" >-->
+<view   wx:for="{{questions}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+<view class='row1'></view>
+  <view class='row'>
+      <view class='pic'>
+        <text class='square' style="color:{{result[index]==1?'blue':'red'}}">{{result[index]==1?'正确':'错误'}}</text>
+      </view>
+      <view bindtap='changeToggle' style="width: 80%;" data-index='{{index}}'>
+        <text class='break' style="-webkit-line-clamp:{{selectedFlag[index]==true?'5':'2'}}">{{index+1}}、{{questions[index].question}}</text>
+      </view>
+    <!--</view>-->
+    
+    <!--上下箭头的显示与隐藏-->
+    <view hidden="{{selectedFlag[index]}}">
+      <image src='/pages/image/arr2.png' style='width:21px;height:20px;'></image>
+    </view>
+    <view hidden="{{!selectedFlag[index]}}">
+      <image src='/pages/image/arr1.png' style='width:21px;height:20px;'></image>
+    </view>
+  </view>
+  <view>—————————————————————————————————————————</view>
+  <!--被折叠内容-->
+  <view wx:if="{{selectedFlag[index]}}">
+    <!--<block wx:for="{{options}}" wx:for-item="item" wx:for-index="index" wx:key="index">-->
+      <view class="li">
+        <view>{{myoption[0]}}、{{options[answerArrays2[0]]}}</view>
+        <view>{{myoption[1]}}、{{options[answerArrays2[1]]}}</view>
+        <view>{{myoption[2]}}、{{options[answerArrays2[2]]}}</view>
+        <view>{{myoption[3]}}、{{options[answerArrays2[3]]}}</view>
+        <view class='wronganswer'><text>您的答案为 {{result[index]==0?'未选择':wrongList[index].wrongOption}}</text></view>
+        <view class='trueanswer'><text>正确答案为 {{myoption[trueoption[index]]}}</text></view>
+      </view>
+  </view>
+</view>
+
+
+
+</view>
+</view>
+<!--</view>-->

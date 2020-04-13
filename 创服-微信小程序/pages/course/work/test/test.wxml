@@ -1,0 +1,96 @@
+<!--pages/test/test.wxml-->
+<!--题目部分--propa="1" propb="2"-->
+<view class='view-page'>
+<navbar page-name="答题区" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view class="page" hover='true' hover-stay-time="20000">
+  <view class='page__question'>
+    <view class='row'>
+      <view class='square'>
+        <text wx:if="{{questionImage!=''}}" >{{type}}</text>
+      </view>
+      <view class='square' style='margin-left:3%;'>
+       <text wx:if="{{questionImage!=''}}" >{{score}}分</text>
+      </view>
+      <!--倒计时  -->
+      <view class="row" style='margin-left:10%;'>
+        <view wx:if="{{countDownDay!='00'}}" class="square">{{countDownDay}}天</view>
+        <view wx:if="{{countDownHour!='00'}}" class="square">{{countDownHour}}时</view>
+        <view wx:if="{{countDownMinute!='00'}}" class="square">{{countDownMinute}}分</view>
+        <view  class="square">{{countDownSecond}}秒</view>
+      </view>
+    </view>
+      <view class="page__title row">
+        <view><!--题号-->
+          <text>{{index+1}}、</text>
+        </view>
+        <view class='page_title_question'><!--题目内容--mode="widthFix"-->
+          <text wx:if="{{questionImage!=''}}" class='myquestion' >{{questionImage}}</text>
+        </view>
+      <!--questionImage在test.js文件的148和197，
+      questionImage: app.globalData.questions[this.data.realIndex].question,//问题数组
+      questionImage: app.globalData.questions[this.data.realIndex].question,-->
+    </view>
+  </view>
+  <view class='hr'></view>
+  <!--选项部分-->
+  <view class="weui-cells weui-cells_after-title">
+
+    <!-- 判断选项个数是3个还是4还是6个 -->
+    <view wx:if="{{optionnumber == '3'}}">
+      <view class=" " hover-class="weui-cell_active" bindtap='select' data-value="{{options[answerArrays1[index]]}}" data-option="{{index}}" wx:for="{{answerArrays1}}" wx:key="index">
+        <icon type="{{icon[index]}}" size="23"></icon><!--小圆点-->
+        <text>{{myoption[index]}}、</text><!--选项代号-->
+        <!--选项内容-->
+        <text class='myoption' mode="widthFix">{{options[answerArrays1[index]]}}</text>
+      </view>
+    </view>
+
+      <view wx:elif="{{optionnumber == '4'}}">
+        <view class="weui-cell " hover-class="weui-cell_active" bindtap='select' data-value="{{options[answerArrays2[index]]}}" data-option="{{index}}" data-index="{{index}}" wx:for="{{answerArrays2}}" wx:for-index="index" wx:key="index">
+        <!--{{index}}-->
+        <view class='row '>
+          <icon type="{{icon[index]}}" size="23"></icon>
+          <text style='margin-left:5%;'>{{myoption[index]}}、</text>
+          <view class='myoption' mode="widthFix">{{options[answerArrays2[index]]}}</view>
+        </view>
+        </view>
+      </view>
+
+      <view wx:else>
+        <view class="weui-cell " hover-class="weui-cell_active" bindtap='select' data-value="{{options[answerArrays3[index]]}}" data-option="{{index}}" wx:for="{{answerArrays3}}" wx:key="index">
+          <icon type="{{icon[index]}}" size="23"></icon>
+          <view class='row'>
+            <text>{{myoption[index]}}、</text>
+            <text class='myoption' mode="widthFix">{{options[answerArrays3[index]]}}</text>
+          </view>
+        </view>
+      </view>
+     </view>
+    </view>
+<view class='row ' style='justify-content: space-between;'>
+  <view hidden="{{index==0}}" class='btn1' bindtap='lastQuestion' style="">上一题</view>
+  <view hidden="{{index==questionCount-1}}" class='btn1'  bindtap='nextQuestion' style="margin-left:{{index==0?'70%':'40%'}}">下一题</view>
+  <view hidden="{{index!=questionCount-1}}" class='btn1'  bindtap='submit' style="">提交作业</view>
+</view>
+
+<!--弹窗部分-->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='isSelect'>
+    <view class='row2'>
+      <block wx:for="{{questionIsSelected}}" wx:for-index="index" wx:key="index" >
+        <view class='selectSquare' style="background-color:{{questionIsSelected[index]==true?'#89ccf3':'gray'}};"><text >{{index+1}}</text></view>
+      </block>
+    </view>
+  </view>
+    <view class='row'>
+      <button class='btn2' bindtap="go">取消</button>
+      <button class='btn2' bindtap="SubmitWork">提交</button>
+    </view>
+</view>
+</view>
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/course/course",
+    "pages/me/me",
+    "pages/homepage/test1",
+    "pages/homepage/test2",
+    "pages/course/webcourseppt",
+    "pages/course/loracourse",
+    "pages/course/webcourse_all",
+    "pages/course/webcourseword",
+    "pages/course/webcoursevideo",
+    "pages/course/work/test/test",
+    "pages/course/work/notice/notice",
+    "pages/course/work/conn/conn",
+    "pages/course/work/result/result",
+    "pages/course/work/index/index",
+    "pages/course/work/wrongAnswer/wrongAnswer",
+    "pages/notice/notice",
+    "dist/navbar/index",
+    "pages/course/download/download"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "disableScroll": "false"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "black",
+    "selectedColor": "#blue",
+    "list": [
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页",
+        "iconPath": "/pages/image/shouye(1).png",
+        "selectedIconPath": "/pages/image/shouye.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "/pages/image/kecheng(1).png",
+        "selectedIconPath": "/pages/image/kecheng.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "通知",
+        "iconPath": "/pages/image/notice(1).png",
+        "selectedIconPath": "/pages/image/notice.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/pages/image/wode(1).png",
+        "selectedIconPath": "/pages/image/wode.png"
+      }
+    ]
+  }
+}

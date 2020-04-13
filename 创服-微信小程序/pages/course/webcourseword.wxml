@@ -1,0 +1,54 @@
+<!--pages/course/webcourseword.wxml
+<text>pages/course/webcourseword.wxml</text>-->
+<view class='view-page'>
+<navbar page-name="课件" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view class='center'>
+  <text>高等数学A：文档</text>
+</view>
+<block wx:for="{{word_list}}" wx:for-index="index">
+  <!--文件的时间信息-->
+  <view class='timeinfo'>
+    <text>{{timelist[index].timeinfo}}</text>
+  </view>
+  <!--在同一天内上传的文件的列表-->
+  <block wx:for="{{word_list[index]}}" wx:for-index="index">
+    <view class='square-col' style='margin-top:5px;'>
+      <view class='left'>
+        <image src='/pages/image/word.png' style='width:35px;height:31px;margin-left:2%;margin-top:0%;' bindtap='download'></image>
+        <!--PPT文件名称-->
+        <view class='doc-tittle'  data-index="{{item.id}}">
+          <text class='single' bindtap='download'>{{item.name}}</text>
+        </view>
+
+        <!--收藏信息-->
+        <view data-index="{{item.id}}" bindtap='WORDchangeToggleCol' style='margin-left:5%;'>
+          <view hidden="{{WORDcollection[item.id]}}">
+            <!--<text>{{item.id}}</text> 这是调试用信息，现已注释-->
+            <image src='/pages/image/collection1.png' style='width:22px;height:21px;'></image>
+          </view>
+          <view hidden="{{!WORDcollection[item.id]}}">
+            <image src='/pages/image/collection0.png' style='width:22px;height:21px; '></image>
+          </view>
+        </view>
+        <!--<text class='little-font' data-index="{{item.id}}" bindtap='WORDchangeToggleCol'>收藏</text>-->
+
+        <!--下载信息-->
+        <view data-index="{{item.id}}" bindtap='WORDchangeToggleDl' style='margin-left:5%;'>
+          <view hidden="{{WORDdownload[item.id]}}">
+            <image src='/pages/image/download1.png' style='width:25px;height:24px; ' bindtap='download' data-index="{{item.id}}"></image>
+          </view>
+          <view hidden="{{!WORDdownload[item.id]}}">
+            <image src='/pages/image/download0.png' style='width:25px;height:24px; '></image>
+          </view>
+        </view>
+        <!--<text class='little-font' data-index="{{item.id}}" bindtap='WORDchangeToggleDl'>下载</text>-->
+      </view>
+    </view>
+  </block>
+</block>
+</view>
+</view>
+<!--<view class='doc-tittle hidtext'>hkjcxhvhkjxchvhcxjvcxhjvhxcjkvhkxjchvxchvkcxjhvjcxhvxhvxcjh</view>-->

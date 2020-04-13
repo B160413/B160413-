@@ -1,0 +1,30 @@
+<view class='view-page'>
+<navbar homehiden="1" page-name="通知" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">课程通知</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">教务通知</view>
+    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">签到</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+    <swiper-item ><view>
+      <i-card>
+        <view slot="content"><i-icon type="task" size="35" color="#ff9900"/>计算机通信与网络课程的老师发布了作业，快去完成吧！</view>
+        <view slot="footer">2019.1.23</view>
+      </i-card>
+    </view></swiper-item>
+    <swiper-item><view></view>
+      <i-card>
+        <view slot="content"><i-icon type="createtask" size="35" color="#ff9900"/>教务处发布了问卷调查，快去完成问卷吧！</view>
+        <view slot="footer">2019.1.23</view>
+      </i-card>
+    </swiper-item>
+    <swiper-item><view>
+      
+    </view></swiper-item>
+</swiper>
+</view>
+</view>

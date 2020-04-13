@@ -1,0 +1,154 @@
+<!--pages/course/webcourse.wxml-->
+<!--<text>pages/course/webcourse.wxml</text>-->
+<view class='view-page'>
+<navbar page-name="课件" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view class='center'>
+  <text>高等数学A：PPT</text>
+</view>
+  <block wx:for="{{ppt_list}}" wx:for-index="index">
+  <!--文件的时间信息-->
+  <view class='timeinfo'>
+    <text>{{timelist[index].timeinfo}}</text>
+  </view>
+  <!--在同一天内上传的文件的列表-->
+  <block wx:for="{{ppt_list[index]}}" wx:for-index="index">
+    <view class='square-col' style='margin-top:5px;'>
+      <view class='left'>
+        <image src='/pages/image/ppt.png' style='width:35px;height:39px;margin-left:2%;margin-top:0%;' bindtap='download'></image>
+        <!--PPT文件名称-->
+        <view class='doc-tittle' data-index="{{item.id}}">
+          <text class='single' bindtap='download'>{{item.name}}</text>
+        </view>
+
+        <!--收藏信息-->
+        <view data-index="{{item.id}}" bindtap='PPTchangeToggleCol' style='margin-left:5%;'>
+          <view hidden="{{PPTcollection[item.id]}}">
+            <!--<text>{{item.id}}</text> 这是调试用信息，现已注释-->
+            <image src='/pages/image/collection1.png' style='width:22px;height:21px;'></image>
+          </view>
+          <view hidden="{{!PPTcollection[item.id]}}">
+            <image src='/pages/image/collection0.png' style='width:22px;height:21px; '></image>
+          </view>
+        </view>
+        <!--<text class='little-font' data-index="{{item.id}}" bindtap='VIDEOchangeToggleCol'>收藏</text>--->
+
+        <!--下载信息-->
+        <view data-index="{{item.id}}" bindtap='PPTchangeToggleDl' style='margin-left:5%;'>
+          <view hidden="{{PPTdownload[item.id]}}">
+            <image src='/pages/image/download1.png' style='width:25px;height:24px; ' bindtap='download'></image>
+          </view>
+          <view hidden="{{!PPTdownload[item.id]}}">
+            <image src='/pages/image/download0.png' style='width:25px;height:24px;'  data-index="{{item.id}}"></image>
+          </view>
+        </view>
+        <!--<text class='little-font' data-index="{{item.id}}" bindtap='VIDOEchangeToggleDl'>下载</text>-->
+      </view>
+    </view>
+  </block>
+</block>
+</view>
+</view>
+
+    <!--<view class='timeinfo'>
+      <text style='margin-left:5%;'>2019-01-10</text>
+    </view>
+    <block wx:for="{{ppt_list2}}" wx:for-index="index">
+      <view class='square-col' style='margin-top:5px;'>
+      <view class='left'>
+        <image src='/pages/image/ppt.png' style='width:35px;height:39px;margin-left:2%;margin-top:0%;'></image>
+        <!--PPT文件名称
+        <view class='doc-tittle'>{{item.name}}</view>
+
+        <!--收藏信息
+        <view data-index="{{item.id}}" bindtap='PPTchangeToggleCol' style=''>
+          <view hidden="{{PPTcollection[item.id]}}">
+            <image src='/pages/image/collection1.png' style='width:22px;height:21px;'></image>
+          </view>
+          <view hidden="{{!PPTcollection[item.id]}}">
+            <image src='/pages/image/collection0.png' style='width:22px;height:21px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='PPTchangeToggleCol'>收藏</text>
+
+        <!--下载信息
+        <view data-index="{{item.id}}" bindtap='PPTchangeToggleDl' style='margin-left:10px;'>
+          <view hidden="{{PPTdownload[item.id]}}">
+            <image src='/pages/image/download1.png' style='width:25px;height:24px; ' ></image>
+          </view>
+          <view hidden="{{!PPTdownload[item.id]}}">
+            <image src='/pages/image/download0.png' style='width:25px;height:24px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='PPTchangeToggleDl'>收藏</text>
+        </view>
+      </view>
+      
+    </block>
+  <!--WORD部分
+  <swiper-item>
+    <block wx:for="{{word_list}}" wx:for-index="index">
+      <view class='square-col'>
+        <image src='/pages/image/word.png' style='width:50px;height:49px;'></image>
+        <!--PPT文件名称
+        <text>{{item.name}}</text>
+
+        <!--收藏信息-
+        <view data-index="{{item.id}}" bindtap='WORDchangeToggleCol' style='margin-left:30%'>
+          <view hidden="{{WORDcollection[item.id]}}">
+            <image src='/pages/image/collection1.png' style='width:22px;height:21px;'></image>
+          </view>
+          <view hidden="{{!WORDcollection[item.id]}}">
+            <image src='/pages/image/collection0.png' style='width:24px;height:23px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='WORDchangeToggleCol'>收藏</text>
+
+        <!--下载信息
+        <view data-index="{{item.id}}" bindtap='WORDchangeToggleDl' >
+          <view hidden="{{WORDdownload[item.id]}}">
+            <image src='/pages/image/download1.png' style='width:25px;height:24px; ' ></image>
+          </view>
+          <view hidden="{{!WORDdownload[item.id]}}">
+            <image src='/pages/image/download0.png' style='width:25px;height:24px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='WORDchangeToggleDl'>收藏</text>
+      </view>
+    </block>
+  </swiper-item>
+  <!--VIDEO部分
+  <swiper-item>
+    <block wx:for="{{video_list}}" wx:for-index="index">
+      <view class='square-col'>
+        <image src='/pages/image/video.png' style='width:50px;height:49px;'></image>
+        <!--PPT文件名称
+        <text>{{item.name}}</text>
+
+        <!--收藏信息
+        <view data-index="{{item.id}}" bindtap='VIDEOchangeToggleCol' style='margin-left:30%'>
+          <view hidden="{{VIDEOcollection[item.id]}}">
+            <image src='/pages/image/collection1.png' style='width:22px;height:21px;'></image>
+          </view>
+          <view hidden="{{!VIDEOcollection[item.id]}}">
+            <image src='/pages/image/collection0.png' style='width:22px;height:21px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='VIDEOchangeToggleCol'>收藏</text>
+
+        <!--下载信息
+        <view data-index="{{item.id}}" bindtap='VIDEOchangeToggleDl' >
+          <view hidden="{{VIDEOdownload[item.id]}}">
+            <image src='/pages/image/download1.png' style='width:25px;height:24px; ' ></image>
+          </view>
+          <view hidden="{{!VIDEOdownload[item.id]}}">
+            <image src='/pages/image/download0.png' style='width:25px;height:24px; '></image>
+          </view>
+        </view>
+        <text class='little-font' data-index="{{item.id}}" bindtap='VIDEOchangeToggleDl'>收藏</text>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>-->

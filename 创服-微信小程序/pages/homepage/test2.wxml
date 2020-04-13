@@ -1,0 +1,15 @@
+<!--pages/homepage/test2.wxml
+<text>pages/homepage/test2.wxml</text>-->
+<view class='view-page'>
+<navbar page-name="课件" bindtap='navBack'></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+
+<view wx:for="{{list}}" wx:key="list">
+  <view>{{item.id}}</view>
+  <view>{{item.title}}</view>
+</view>
+
+
+</view>
+</view>

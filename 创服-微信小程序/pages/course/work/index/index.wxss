@@ -1,0 +1,129 @@
+/**index.wxss**/
+page {
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  /*overflow: hidden;*/
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+.list{
+  background-color: #f4f7f6;
+  margin-top: 80rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listone{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 90rpx;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.listtwo{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.listthree{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 30rpx;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.buton{
+  color:black;
+  width: 50%;
+  background-color:  #d1f1f5;
+  
+}
+.bbuton{
+  margin-top: 60rpx;
+}
+.list{
+  background-color: #f4f7f6;
+  margin-top: 80rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listone{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 90rpx;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.listtwo{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 35rpx;
+  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.listthree{
+  background-color: #f4f7f6;
+  display: flex;
+  font-size: 30rpx;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.buton{
+  color:black;
+  width: 50%;
+  background-color:  #d1f1f5;
+  
+}
+.bbuton{
+  margin-top: 60rpx;
+}

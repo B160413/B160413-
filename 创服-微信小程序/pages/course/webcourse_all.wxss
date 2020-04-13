@@ -1,0 +1,109 @@
+/* pages/course/webcourse_all.wxss */
+page {
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  /*overflow: hidden;*/
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+
+.center{
+  padding-top: 5rpx;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.li {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  width: 90%;
+  padding: 0 4%;
+  height: 100rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #dfdfdf;
+}
+.li-res {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  width: 90%;
+  padding: 0 4%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom:none;
+}
+.little-bg-gray{
+  color: rgb(131, 131, 131);
+  background-color: rgb(255, 255, 255)!important;
+  border-bottom: 2rpx solid  #fff!important;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left:10%;
+}
+
+.col{
+  display:flex;
+  flex-direction: column;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+}
+.row-center{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align:center;
+  padding: 5rpx;
+}
+.little-tittle
+{
+  margin-left:5%;
+  font-size:40rpx;
+  color: black;
+  line-height: 80rpx;
+}
+.hr{
+  height: 2rpx;
+  width: 85%;
+  margin-left:15%;
+  background-color: #c7c7c7;
+  opacity: 0.5;
+}
+.hr2{
+  height: 8rpx;
+  width: 100%;
+  border-radius:5rpx;
+  /*margin-left:15%;*/
+  background-color: #dddddd;
+  opacity: 0.5;
+}
+.icon-tittle
+{
+  font-size:24rpx;
+}

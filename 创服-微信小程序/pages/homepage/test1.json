@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navbar": "/dist/navbar/index"
+  },
+  "navigationBarTitleText": "课程表"
+}

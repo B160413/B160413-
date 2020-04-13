@@ -1,0 +1,46 @@
+<!--pages/homepage/homepage.wxml-->
+<view class='view-page'>
+<navbar homehiden="1" page-name="首页" bindtap='navBack' style="background-color:#abd8e4"></navbar>
+<view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+
+<view class="mainFrame">
+  <swiper class="container" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin='25px' next-margin='25px'>
+    <block wx:for="{{xinwen_list}}" wx:for-index="index">
+      <swiper-item class="vol-swiper-item" bindtap="onItemClick">
+        
+        <!--<view class="vol-meta-title">
+          <image class="icon_right" src="../../image/左.png"></image>
+          <text class="vol-number">来源：{{item.copyfrom}}</text>
+          <image class="icon_left" src="../../image/右.png"></image>
+        </view>-->
+        <view class="vol-card" data-id="{{item.id}}" catchtap="onPostTap">
+          <view class='item' ><!--行前缩进6%-->
+          <text class="vol-number">{{item.more}}</text>
+          <image class="icon_right" src="/pages/image/more.png"></image>
+          </view>
+          <!--图片-->
+          <image class="vol-picture" src="{{item.images}}" mode="aspectFill"></image>
+          <!--标题-->
+          <view class="vol-meta-title">
+            <text class="vol-number">{{item.title}}</text>
+          </view>
+          <!--时间-->
+          <view class="vol-meta-time">
+            <text>{{item.inputtime}}</text>
+          </view>
+          <!--描述信息-->
+          <view class="vol-content">
+            <text class="vol-content-text">{{item.description}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!--<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>-->
+
+
+</view>
+</view>
